@@ -4,7 +4,7 @@ from i2c_slave import I2CSlave
 import time
 
 I2C_ADDRESS = 0x42
-LED = Pin("LED", Pin.OUT)
+LED = Pin(14, Pin.OUT)
 BUZZER = Pin(15, Pin.OUT)  # Active 2-wire buzzer: + to GP15, - to GND
 
 # I2C0 pins GP0 (SDA), GP1 (SCL). Pull each bus line up to 3V3 with 4.7k.
