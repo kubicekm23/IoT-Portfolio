@@ -31,6 +31,7 @@ class I2CSlave:
 
         # RP2040 GPIO function 3 connects the selected pins to I2C.
         for pin in (sda, scl):
+            machine.Pin(pin, machine.Pin.IN, machine.Pin.PULL_UP)
             control = IO_BANK0_BASE + 8 * pin + 4
             machine.mem32[control | ALIAS_CLR] = 0x1F
             machine.mem32[control | ALIAS_SET] = 0x03
